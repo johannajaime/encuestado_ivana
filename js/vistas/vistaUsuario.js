@@ -51,6 +51,12 @@ VistaUsuario.prototype = {
     preguntas.forEach(function(clave){
       //completar
       //agregar a listaPreguntas un elemento div con valor "clave.textoPregunta", texto "clave.textoPregunta", id "clave.id"
+      //var preguntas = clave.textoPregunta;
+      //contexto.mostrarPreguntas(listaPreguntas);
+      listaPreguntas.append($("<label>", {
+        value: clave.textoPregunta,
+        text: clave.textoPregunta
+      }));
       var respuestas = clave.cantidadPorRespuesta;
       contexto.mostrarRespuestas(listaPreguntas,respuestas, clave);
     })
@@ -69,6 +75,19 @@ VistaUsuario.prototype = {
         text: elemento.textoRespuesta
       }));
     });
+    listaPreguntas.append($('<br>'));
+  },
+
+   mostrarPreguntas:function(listaPreguntas){
+    //preguntas.forEach (function(elemento) {
+      listaPreguntas.append($('<input>', {
+        value: elemento.textoPregunta,
+        name: clave.id,
+      }));
+      listaPreguntas.append($("<label>", {
+        text: elemento.textoPregunta
+      }));
+   // });
   },
 
   dibujarGrafico: function(nombre, respuestas){

@@ -69,7 +69,7 @@ Modelo.prototype = {
     })
     var editarPreg = {'textoPregunta': preg.nombre, 'id': id, 'cantidadPorRespuesta': preg.respuestas};
     this.preguntas.push(editarPreg);
-    this.guardar();
+    //this.guardar();
     this.preguntaEditada.notificar();
   },
   cargarPreguntas: function(){
